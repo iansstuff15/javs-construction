@@ -6,19 +6,19 @@ const WorkWithUs =()=>{
         { name: 'Meet our leadership', href: '#' },
       ]
       const stats = [
-        { name: 'Offices worldwide', value: '12' },
-        { name: 'Full-time colleagues', value: '300+' },
-        { name: 'Hours per week', value: '40' },
-        { name: 'Paid time off', value: 'Unlimited' },
+        { name: 'In the networking and connectivity industry', value: '8 Years of experience' },
+        { name: 'Number of successfully completed projects  ', value: '300+' },
+        { name: 'Chose to renew their contract or continue using our services', value: '80%' },
+        { name: 'Average installation and setup time for networks', value: '1 day' },
       ]
       
     
         return (
           <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
             <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+              src="/withSky.jpg"
               alt=""
-              className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
+              className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-bottom"
             />
             <svg
               viewBox="0 0 1097 845"
@@ -70,10 +70,15 @@ const WorkWithUs =()=>{
             </svg>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl lg:mx-0">
-                <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
+                <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Why work with us?</h2>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                  fugiat veniam occaecat fugiat aliqua.
+                Javs Construction is a trusted partner of Sky Cable, a leading provider of cable television and internet services in the Philippines. With over 700,000 subscribers across the country, Sky Cable is known for its high-speed internet and wide variety of unlimited data plans, making it the go-to choice for households and businesses in need of reliable connectivity.
+                </p>
+                <p className="mt-6 text-lg leading-8 text-gray-300">
+                At Javs Construction, we work closely with Sky Cable to bring their services to even more people, ensuring that everyone has access to the digital world. Our experienced professionals are equipped with the latest tools and technologies, and are committed to delivering high-quality, reliable solutions that meet our clients specific needs.
+                </p>
+                <p className="mt-6 text-lg leading-8 text-gray-300">
+                Our partnership with Sky Cable allows us to offer a range of services to meet your networking and connectivity needs. From network installation and security to internet connectivity and support, we have the expertise and experience to deliver reliable, high-quality solutions that keep you connected and empowered.
                 </p>
               </div>
               <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">

@@ -1,3 +1,4 @@
+import Image from "next/image"
 const CTA=()=>{
     return (
         <div className="bg-white">
@@ -18,19 +19,18 @@ const CTA=()=>{
               </svg>
               <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Boost your productivity.
-                  <br />
-                  Start using our app today.
+                Ready to bring your network to the next level?
+
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                  Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
+                Contact Javs Construction today to get started. Our team of experienced professionals is equipped with the latest tools and technologies to deliver fast, reliable, and cost-effective solutions for all your networking and connectivity needs. Whether you are a small business owner or a large corporation, we are here to help you achieve your goals and stay connected in a fast-paced digital world. Contact us now to schedule a consultation and see what we can do for you
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                   <a
                     href="#"
                     className="rounded-md bg-white px-3.5 py-1.5 text-base font-semibold leading-7 text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
-                    Get started
+                    Contact us
                   </a>
                   <a href="#" className="text-base font-semibold leading-7 text-white">
                     Learn more <span aria-hidden="true">→</span>
@@ -38,9 +38,9 @@ const CTA=()=>{
                 </div>
               </div>
               <div className="relative mt-16 h-80 lg:mt-8">
-                <img
-                  className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                  src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+                <Image
+                  className="absolute top-0 left-0 w-[50rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                  src="/work.jpg"
                   alt="App screenshot"
                   width={1824}
                   height={1080}
