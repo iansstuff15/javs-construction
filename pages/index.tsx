@@ -12,14 +12,14 @@ import { Features } from '@headlessui/react/dist/utils/render'
 import Feature from '../components/feature'
 import Footer from '../components/footer'
 const inter = Inter({ subsets: ['latin'] })
-
+import { useRef } from 'react'
 export default function Home() {
-  const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
-  ]
+  const homeRef = useRef(null); //represents main section
+  const commitRef = useRef(null); //represents about section
+  const workRef = useRef(null);
+  const contactRef = useRef(null);
+
+  
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <>
@@ -30,10 +30,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
    
-      <Hero/>
-      <Feature/>
-      <WorkWithUs/>
-      <CTA/>
+      <Hero references={[homeRef,commitRef, workRef,contactRef]}/>
+      <Feature reference={commitRef }/>
+      <WorkWithUs reference={workRef}/>
+      <CTA reference={contactRef}/>
       <Footer/>
     </>
   )

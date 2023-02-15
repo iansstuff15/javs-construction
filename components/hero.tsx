@@ -2,21 +2,33 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import { useState } from 'react'
+import { MutableRefObject, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 const inter = Inter({ subsets: ['latin'] })
 
-
-const Hero = () =>{
+interface props {
+  references: Array<MutableRefObject<null>>
+}
+const Hero:React.FC<props> = ({references}) =>{
+  const handleScroll = (ref:any) => {
+    window.scrollTo({
+      top: ref.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
     const navigation = [
-        { name: 'Product', href: '#' },
-        { name: 'Features', href: '#' },
-        { name: 'Marketplace', href: '#' },
-        { name: 'Company', href: '#' },
+      { name: 'Home', href: '#',onClick: ()=>handleScroll(references[0]) },
+        { name: 'Our Commitment', href: '#' ,onClick: ()=>handleScroll(references[1])},
+        { name: 'Why work with us', href: '#' ,onClick: ()=>handleScroll(references[2])},
+        { name: 'Contact us', href: '#' ,onClick: ()=>handleScroll(references[3])},
+       
       ]
+      
       const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+    
+      
       return (
         <>
           <Head>
@@ -25,8 +37,8 @@ const Hero = () =>{
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
           </Head>
-       
-          <div className="isolate bg-white">
+         
+          <div className="isolate bg-white" style={{color:"white"}} ref={references[0]}>
           <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
             <svg
               className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -53,11 +65,17 @@ const Hero = () =>{
             </svg>
           </div>
           <div className="px-6 pt-6 lg:px-8">
+        
             <nav className="flex items-center justify-between" aria-label="Global">
+          
               <div className="flex lg:flex-1">
+              <video autoPlay muted loop id="myVideo" className='rounded-xl'>
+          <source src="https://firebasestorage.googleapis.com/v0/b/site-9a8dd.appspot.com/o/global%20network%20background%20animation.mp4?alt=media&token=92d13012-5b51-48b9-a30f-6e08e9fba07f" type="video/mp4"/>
+          Your browser does not support HTML5 video.
+        </video>
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">JAVS Construction</span>
-                  <Image className="h-8" src="/logo.png" alt="" width={120} height={130}/>
+               
                 </a>
               </div>
               <div className="flex lg:hidden">
@@ -72,16 +90,12 @@ const Hero = () =>{
               </div>
               <div className="hidden lg:flex lg:gap-x-12">
                 {navigation.map((item) => (
-                  <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                  <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900" onClick={item.onClick}>
                     {item.name}
                   </a>
                 ))}
               </div>
-              <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Log in <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+            
             </nav>
             <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
               <Dialog.Panel className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
@@ -107,19 +121,13 @@ const Hero = () =>{
                           key={item.name}
                           href={item.href}
                           className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
-                        >
+                          onClick={item.onClick}
+                      >
                           {item.name}
                         </a>
                       ))}
                     </div>
-                    <div className="py-6">
-                      <a
-                        href="#"
-                        className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
-                      >
-                        Log in
-                      </a>
-                    </div>
+                    
                   </div>
                 </div>
               </Dialog.Panel>
@@ -138,11 +146,13 @@ const Hero = () =>{
                   </div> */}
                 </div>
                 <div className="text-center">
-                  <h2 className="text-3xl font-bold tracking-tight text-gray-700 sm:text-4xl"> JAVS Construction </h2>
-                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                <Image className="h-8" src="/logo.png" alt="" width={150} height={180} style={{margin:"auto "}}/>
+                <br/>
+                  <h2 className="text-3xl font-bold tracking-tight text-gray-500 sm:text-4xl"> JAVS Construction </h2>
+                  <h1 className="text-4xl font-bold tracking-tight text-white-900 sm:text-6xl">
                     Connecting Communities, Together
                   </h1>
-                  <p className="mt-6 text-lg leading-8 text-gray-600">
+                  <p className="mt-6 text-lg leading-8 text-white-600">
                   At Javs Construction, we believe that access to the internet is a fundamental right, and that every community deserves the opportunity to connect and thrive in the digital age. We bring our passion, expertise, and commitment to excellence to every project, working closely with our clients to connect them to the world.
                   </p>
                   <div className="mt-10 flex items-center justify-center gap-x-6">

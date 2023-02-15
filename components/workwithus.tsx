@@ -1,4 +1,10 @@
-const WorkWithUs =()=>{
+import { MutableRefObject } from "react"
+
+interface props {
+  reference:MutableRefObject<null>
+}
+const WorkWithUs:React.FC<props> =({reference})=>{
+  
     const links = [
         { name: 'Open roles', href: '#' },
         { name: 'Internship program', href: '#' },
@@ -14,7 +20,7 @@ const WorkWithUs =()=>{
       
     
         return (
-          <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+          <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" ref={reference}>
             <img
               src="/withSky.jpg"
               alt=""

@@ -1,7 +1,11 @@
 import Image from "next/image"
-const CTA=()=>{
+import { MutableRefObject } from "react"
+interface props {
+  reference:MutableRefObject<null>
+}
+const CTA:React.FC<props>=({reference})=>{
     return (
-        <div className="bg-white">
+        <div className="bg-white" ref={reference}>
           <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
               <svg
@@ -27,13 +31,11 @@ const CTA=()=>{
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                   <a
-                    href="#"
+                    href=""
                     className="rounded-md bg-white px-3.5 py-1.5 text-base font-semibold leading-7 text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  
                   >
                     Contact us
-                  </a>
-                  <a href="#" className="text-base font-semibold leading-7 text-white">
-                    Learn more <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </div>

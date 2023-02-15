@@ -1,5 +1,7 @@
 import Image from "next/image"
-const Footer = () => {
+import { MutableRefObject } from "react"
+
+const Footer = ({}) => {
 
     return(
         

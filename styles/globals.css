@@ -108,3 +108,12 @@ a {
     color-scheme: dark;
   }
 }
+video{
+ 
+  position: absolute;
+  width: 140vw;
+  bottom: 0;
+  height: 90vh;
+  filter: brightness(40%);
+  
+}
